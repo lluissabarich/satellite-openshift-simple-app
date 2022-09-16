@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: food-route-cluster-3
+  namespace: food-delivery-1
+  labels:
+    razee/watch-resource: detail
+spec:
+  host: food-route.satellite-cluster-3-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.eu-de.containers.appdomain.cloud
+  to:
+    kind: Service
+    name: example-food
+  port:
+    targetPort: 8090
